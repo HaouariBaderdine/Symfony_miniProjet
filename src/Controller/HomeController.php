@@ -3,19 +3,27 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
+use Twig\Environment;
 
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @return Response
+     * @var Environment
      */
-    public function index()
+    private $twig;
+    public function _construct(Environment $twig){
+        $this->twig = $twig;
+    }
+    public function home():Response
     {
-        return $this->render('home/home.html.twig', [
-            'controller_name' => 'HomeController',
-            'title' => 'Bienvenu'
-        ]);
+        return new Response($this->render('home/home.html.twig', [
+        'controller_name' => 'HomeController',
+        'title' => 'Bienvenu'
+    ]));
     }
 
     /**

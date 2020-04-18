@@ -10,7 +10,7 @@ class DestinationController extends AbstractController
     /**
      * @Route("/destination", name="destination")
      */
-    public function index()
+    public function destination()
     {
         return $this->render('home/destination.html.twig', [
             'controller_name' => 'DestinationController',
