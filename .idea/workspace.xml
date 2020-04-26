@@ -2,49 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcea835c-4419-425d-8382-187f36834bc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200420175120.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/registration.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Circuit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Destination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/EtapeCircuit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200424210232.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200424210531.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200424210802.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200424211349.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CircuitRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DestinationRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/EtapeCircuitRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/VilleRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/images/bootstrap-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/holder.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/jquery-slim.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap-4-Carousel-Template-master/js/popper.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/destination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/destination.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/registration.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +207,14 @@
       <workItem from="1587225629043" duration="6179000" />
       <workItem from="1587232065641" duration="97000" />
       <workItem from="1587238466749" duration="2061000" />
-      <workItem from="1587404521382" duration="2019000" />
+      <workItem from="1587404521382" duration="2242000" />
+      <workItem from="1587415654118" duration="1418000" />
+      <workItem from="1587417472769" duration="151000" />
+      <workItem from="1587417789795" duration="114000" />
+      <workItem from="1587427216337" duration="2028000" />
+      <workItem from="1587475543053" duration="912000" />
+      <workItem from="1587761495297" duration="1486000" />
+      <workItem from="1587914149310" duration="227000" />
     </task>
     <servers />
   </component>
@@ -252,10 +233,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="420" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1587229161555" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587404541805">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587914150240">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587404541805" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587914150240" />
     <state x="346" y="49" key="search.everywhere.popup" timestamp="1587226711077">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
