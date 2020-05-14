@@ -19,6 +19,26 @@ class VilleRepository extends ServiceEntityRepository
         parent::__construct($registry, Ville::class);
     }
 
+    /**
+     * @return Ville[]
+     */
+    public function find_ville_etape(){
+        $res=$this->getEntityManager();
+        $query=$res->createQuery('SELECT DISTINCT v,e FROM App\Entity\Ville v LEFT JOIN v.etapes e');
+        return $query->getResult();
+    }
+
+    public function Supprimer_q3(){
+        $entityManager = $this->getEntityManager();
+        $res=$this->find_ville_etape();
+        foreach ($res as $valeur){
+            if($valeur->getEtapes()->count()==0)
+                $entityManager->remove($valeur);
+        }
+        $entityManager->flush();
+    }
+
+
     // /**
     //  * @return Ville[] Returns an array of Ville objects
     //  */

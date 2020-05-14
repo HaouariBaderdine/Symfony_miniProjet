@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\EtapeCircuitRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\EtapeRepository")
  */
-class EtapeCircuit
+class Etape
 {
     /**
      * @ORM\Id()
@@ -17,16 +17,16 @@ class EtapeCircuit
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Ville", inversedBy="etapeCircuits")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ville", inversedBy="etapes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $code_ville;
+    private $ville_etape;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Circuit", inversedBy="etapeCircuits")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Circuit", inversedBy="etapes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $code_circuit;
+    private $circuit_etape;
 
     /**
      * @ORM\Column(type="integer")
@@ -43,26 +43,26 @@ class EtapeCircuit
         return $this->id;
     }
 
-    public function getCodeVille(): ?Ville
+    public function getVilleEtape(): ?Ville
     {
-        return $this->code_ville;
+        return $this->ville_etape;
     }
 
-    public function setCodeVille(?Ville $code_ville): self
+    public function setVilleEtape(?Ville $ville_etape): self
     {
-        $this->code_ville = $code_ville;
+        $this->ville_etape = $ville_etape;
 
         return $this;
     }
 
-    public function getCodeCircuit(): ?Circuit
+    public function getCircuitEtape(): ?Circuit
     {
-        return $this->code_circuit;
+        return $this->circuit_etape;
     }
 
-    public function setCodeCircuit(?Circuit $code_circuit): self
+    public function setCircuitEtape(?Circuit $circuit_etape): self
     {
-        $this->code_circuit = $code_circuit;
+        $this->circuit_etape = $circuit_etape;
 
         return $this;
     }

@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200424210802 extends AbstractMigration
+final class Version20200504152309 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,8 @@ final class Version20200424210802 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('CREATE TABLE circuit (id INT AUTO_INCREMENT NOT NULL, code_circuit VARCHAR(255) NOT NULL, des_circuit VARCHAR(255) NOT NULL, duree_circuit VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('ALTER TABLE circuit CHANGE code_circuit code_circuit VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE destination CHANGE code_dest code_dest VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +31,7 @@ final class Version20200424210802 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP TABLE circuit');
+        $this->addSql('ALTER TABLE circuit CHANGE code_circuit code_circuit INT NOT NULL');
+        $this->addSql('ALTER TABLE destination CHANGE code_dest code_dest INT NOT NULL');
     }
 }

@@ -2,25 +2,34 @@
 
 namespace App\Repository;
 
-use App\Entity\EtapeCircuit;
+use App\Entity\Etape;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method EtapeCircuit|null find($id, $lockMode = null, $lockVersion = null)
- * @method EtapeCircuit|null findOneBy(array $criteria, array $orderBy = null)
- * @method EtapeCircuit[]    findAll()
- * @method EtapeCircuit[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Etape|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Etape|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Etape[]    findAll()
+ * @method Etape[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EtapeCircuitRepository extends ServiceEntityRepository
+class EtapeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, EtapeCircuit::class);
+        parent::__construct($registry, Etape::class);
     }
 
+    public function modifier_q2(){
+        $entityManager = $this->getEntityManager();
+        $etape=$entityManager->getRepository(Etape::class)->findOneBy(array('ville_etape'=>'1'));
+        $etape->setDureeEtape(3);
+        $entityManager->flush();
+    }
+
+
+
     // /**
-    //  * @return EtapeCircuit[] Returns an array of EtapeCircuit objects
+    //  * @return Etape[] Returns an array of Etape objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +46,7 @@ class EtapeCircuitRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?EtapeCircuit
+    public function findOneBySomeField($value): ?Etape
     {
         return $this->createQueryBuilder('e')
             ->andWhere('e.exampleField = :val')

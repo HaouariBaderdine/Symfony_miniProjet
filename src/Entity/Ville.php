@@ -19,7 +19,7 @@ class Ville
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string")
      */
     private $code_ville;
 
@@ -32,16 +32,16 @@ class Ville
      * @ORM\ManyToOne(targetEntity="App\Entity\Destination", inversedBy="villes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $code_dest;
+    private $dest_ville;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\EtapeCircuit", mappedBy="code_ville")
+     * @ORM\OneToMany(targetEntity="App\Entity\Etape", mappedBy="ville_etape", orphanRemoval=true)
      */
-    private $etapeCircuits;
+    private $etapes;
 
     public function __construct()
     {
-        $this->etapeCircuits = new ArrayCollection();
+        $this->etapes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -73,43 +73,43 @@ class Ville
         return $this;
     }
 
-    public function getCodeDest(): ?Destination
+    public function getDestVille(): ?Destination
     {
-        return $this->code_dest;
+        return $this->dest_ville;
     }
 
-    public function setCodeDest(?Destination $code_dest): self
+    public function setDestVille(?Destination $dest_ville): self
     {
-        $this->code_dest = $code_dest;
+        $this->dest_ville = $dest_ville;
 
         return $this;
     }
 
     /**
-     * @return Collection|EtapeCircuit[]
+     * @return Collection|Etape[]
      */
-    public function getEtapeCircuits(): Collection
+    public function getEtapes(): Collection
     {
-        return $this->etapeCircuits;
+        return $this->etapes;
     }
 
-    public function addEtapeCircuit(EtapeCircuit $etapeCircuit): self
+    public function addEtape(Etape $etape): self
     {
-        if (!$this->etapeCircuits->contains($etapeCircuit)) {
-            $this->etapeCircuits[] = $etapeCircuit;
-            $etapeCircuit->setCodeVille($this);
+        if (!$this->etapes->contains($etape)) {
+            $this->etapes[] = $etape;
+            $etape->setVilleEtape($this);
         }
 
         return $this;
     }
 
-    public function removeEtapeCircuit(EtapeCircuit $etapeCircuit): self
+    public function removeEtape(Etape $etape): self
     {
-        if ($this->etapeCircuits->contains($etapeCircuit)) {
-            $this->etapeCircuits->removeElement($etapeCircuit);
+        if ($this->etapes->contains($etape)) {
+            $this->etapes->removeElement($etape);
             // set the owning side to null (unless already changed)
-            if ($etapeCircuit->getCodeVille() === $this) {
-                $etapeCircuit->setCodeVille(null);
+            if ($etape->getVilleEtape() === $this) {
+                $etape->setVilleEtape(null);
             }
         }
 

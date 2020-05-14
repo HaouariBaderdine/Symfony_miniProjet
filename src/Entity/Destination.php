@@ -19,7 +19,7 @@ class Destination
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string")
      */
     private $code_dest;
 
@@ -29,7 +29,7 @@ class Destination
     private $des_dest;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Ville", mappedBy="code_dest")
+     * @ORM\OneToMany(targetEntity="App\Entity\Ville", mappedBy="dest_ville", orphanRemoval=true)
      */
     private $villes;
 
@@ -79,7 +79,7 @@ class Destination
     {
         if (!$this->villes->contains($ville)) {
             $this->villes[] = $ville;
-            $ville->setCodeDest($this);
+            $ville->setDestVille($this);
         }
 
         return $this;
@@ -90,8 +90,8 @@ class Destination
         if ($this->villes->contains($ville)) {
             $this->villes->removeElement($ville);
             // set the owning side to null (unless already changed)
-            if ($ville->getCodeDest() === $this) {
-                $ville->setCodeDest(null);
+            if ($ville->getDestVille() === $this) {
+                $ville->setDestVille(null);
             }
         }
 
