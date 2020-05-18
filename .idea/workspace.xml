@@ -2,23 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcea835c-4419-425d-8382-187f36834bc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200504131406.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/MAJ.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/DestinationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200514230011.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200514230134.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/editDestination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/newDestination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/Circuits.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/showCircuit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/showDestination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translations/forms.fr.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.yarn-integrity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DestinationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Circuit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Circuit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EtapeCircuit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Etape.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200424210232.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200504155633.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200424210531.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200424210802.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200504152309.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200424211349.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DestinationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DestinationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EtapeCircuitRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EtapeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/VilleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/VilleRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/MAJ.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/MAJ.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/destination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/destination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +223,16 @@
       <workItem from="1588683889803" duration="812000" />
       <workItem from="1589293017252" duration="2798000" />
       <workItem from="1589320905668" duration="5823000" />
+      <workItem from="1589461896755" duration="239000" />
+      <workItem from="1589496297158" duration="1644000" />
+      <workItem from="1589589180065" duration="721000" />
+      <workItem from="1589648439922" duration="605000" />
+      <workItem from="1589668543110" duration="7150000" />
+      <workItem from="1589675862929" duration="8290000" />
+      <workItem from="1589734906707" duration="3990000" />
+      <workItem from="1589752959188" duration="3636000" />
+      <workItem from="1589760154856" duration="617000" />
+      <workItem from="1589811134065" duration="10176000" />
     </task>
     <servers />
   </component>
@@ -233,6 +247,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="550" y="37" key="#Composer/0.0.1366.728@0.0.1366.728" timestamp="1587223601437" />
+    <state x="550" y="5" width="807" height="718" key="#Plugins" timestamp="1589675927263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="550" y="5" width="807" height="718" key="#Plugins/0.0.1366.728@0.0.1366.728" timestamp="1589675927263" />
     <state x="420" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587229161555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -241,14 +259,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="785" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1588255873846" />
-    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1588254928962">
+    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589675670706">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1588254928962" />
+    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1589675670706" />
     <state x="739" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589326470243">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="739" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589326470243" />
+    <state x="605" y="0" key="CommitChangelistDialog2" timestamp="1589815201257">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="605" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589815201257" />
+    <state x="759" y="119" key="FileChooserDialogImpl" timestamp="1589815204756">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="759" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589815204756" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1588293251729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

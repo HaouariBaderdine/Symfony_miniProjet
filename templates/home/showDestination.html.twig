@@ -1,0 +1,227 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <style>
+
+        main{margin-top: 68px;}
+        h2{color:cadetblue;text-align: center;font-weight: bold}
+
+        .container{
+            margin-top: 30px;
+        }
+        .image-container {
+            position: relative;
+        }
+
+        .container .image-container{
+            margin-left: 27%;
+            width: 500px;
+        }
+
+        .container #button{
+            margin-left: 40%;
+        }
+
+        .container table tr th{
+            text-decoration: underline;
+            color: dodgerblue;
+        }
+
+        .container table img{
+            border:solid 1px white;
+            height: 60px;
+            width: 90px;
+        }
+
+        section{margin-left:-113px;width: 1340px}
+
+    </style>
+
+    <main>
+        <hr>
+             <h2>{{ destination.desDest }}</h2>
+        <hr>
+    </main>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <div class="d-flex justify-content-start">
+                                <div class="image-container">
+                                    <img src="{{ destination.image }}" id="imgProfile"  class="img-thumbnail" />
+                                </div>
+                                <div class="ml-auto">
+                                    <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content ml-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Identification :</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ destination.id }}
+                                            </div>
+                                        </div>
+                                        <hr />
+
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> description :</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ destination.desDest }}
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Code de {{ destination.desDest }} :</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{destination.codeDest }}
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div id="button">
+                                            <button type="button" class="btn btn-warning"><i class="far fa-edit"></i> Modifier</button>
+                                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Supprimer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<br>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Image ville</th>
+                            <th scope="col">Code ville</th>
+                            <th scope="col">Description ville</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for ville in destination.villes %}
+                        <tr>
+                            <th scope="row">{{ ville.id }}</th>
+                            <td><a href="{{ ville.image }}"><img src="{{ ville.image }}"></a></td>
+                            <td>{{ ville.codeVille}}</td>
+                            <td>{{ ville.desVille }}</td>
+                            <td>
+                                <p>
+                                    <a style="color: #5eb5e0"href="#"><i class="fas fa-info-circle"></i></a>
+                                    <a style="color: yellow" href="#"><i class="far fa-edit"></i></a>
+                                    <a style="color: red"href="#"><i class="far fa-trash-alt"></i></a>
+                                </p>
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                    
+                    <a href="#"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Ville</a>
+               <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><hr><br>
+
+    <section class="footers bg-light pt-5 pb-3">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 footers-one">
+                    <div class="footers-logo">
+                        <img src="#" alt="Logo" style="width:120px;">
+                    </div>
+                    <div class="footers-info mt-3">
+                        <p>Voyages organisées  avec Agence Tours Dsi22 .</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                        <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                        <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                        <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-two">
+                    <h5>Essentials </h5>
+                    <ul class="list-unstyled">
+                        <li><a href="maintenance.html">Search</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-three">
+                    <h5>Information </h5>
+                    <ul class="list-unstyled">
+                        <li><a href="maintenance.html">Register Now</a></li>
+                        <li><a href="contact.html">Advice</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-four">
+                    <h5>Explore </h5>
+                    <ul class="list-unstyled">
+                        <li><a href="maintenance.html">News</a></li>
+                        <li><a href="about.html">Videos</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-five">
+                    <h5>Company </h5>
+                    <ul class="list-unstyled">
+                        <li><a href="maintenance.html">Career</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="disclaimer bg-light border">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12 py-2">
+                    <small>
+                        Disclaimer: Element Limited is only an intermediary offering its platform to facilitate the transactions between Seller and Customer/Buyer/User and is not and cannot be a party to or control in any manner any transactions between the Seller and the Customer/Buyer/User. All the offers and discounts on this Website have been extended by various Builder(s)/Developer(s) who have advertised their products. Element is only communicating the offers and not selling or rendering any of those products or services. It neither warrants nor is it making any representations with respect to offer(s) made on the site. Element Limited shall neither be responsible nor liable to mediate or resolve any disputes or disagreements between the Customer/Buyer/User and the Seller and both Seller and Customer/Buyer/User shall settle all such disputes without involving Element Limited in any manner.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="copyright border">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12 pt-3">
+                    <p class="text-muted">© 2020 Haouari Baderdine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+{% endblock %}

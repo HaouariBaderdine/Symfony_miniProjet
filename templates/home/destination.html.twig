@@ -8,9 +8,9 @@
     main{margin-top: 18px;}
     main img{height: 500px;width: 100%}
     h2{color:cadetblue;text-align: center;font-weight: bold}
-    main article{padding-top: 50px}
-    main article p{text-align: center}
-    main .rounded-circle{margin-left: 100px;height: 140px;width: 140px}
+    main #destination .card img{height: 200px;width: 340px}
+    main #destination .card{width: 340px;margin-left: 15px;margin-right:15px;margin-top: 30px;margin-bottom: 20px}
+
     section{margin-left:-113px;width: 1340px}
 </style>
 <br><br>
@@ -71,49 +71,47 @@
 
         <hr/>
 
-        <div class="container">
-            <h2>Quelles sont les villes qui sont toujours programmées en premier ordre (ordre 1) dans les circuits ?</h2>
-            <div class="row flex">
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                            </h5>
-                        </div>
-                    </div>
-                 </div>
+        <!-- Destination
+      ================================================== -->
+        <div  class="d-flex flex-column bg-light justify-content-center h-25">
+            <h2 style="text-align: left;font-weight: normal">&nbsp&nbsp&nbsp<i class="fas fa-list-ul"></i> Destinations :</h2>
+            <div class="text-right">
+                <a href="{{ path('admin.destination.new') }}" class="btn btn-primary">Créer une nouvelle destination</a>
             </div>
         </div>
 
-        <hr/>
-        <!-- Marketing messaging and featurettes
-      ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-
-        <article class="container marketing bg-light pt-5 pb-3">
-
-            <!-- Three columns of text below the carousel -->
+        <div class="container bg-light" id="destination">
             <div class="row">
-                <div class="col-lg-4">
-                    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                    <h2>Destination 1</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                    <h2>Destination 2</h2>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-                    <h2>Destination 3</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-        </article>
+                {% for dest in destinations %}
+                <div class="card">
+                    <img class="card-img-top" src="{{ dest.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{dest.desDest}}</h5>
+                        <p class="card-text">Code destination : + {{ dest.codeDest}}</p>
+                        <hr>
+                        <p style="width: 330px;" class="card-text">
+
+                            <button type="button"class="btn btn-info">
+                                <a style="color: white;text-decoration: none;margin-left: -10px"  href="{{ path('destination.show',{id: dest.id}) }}" ><i class="fas fa-info-circle"></i> Détail</a>
+                            </button>
+
+                            <button type="button" class="btn btn-warning">
+                                <a style="color: white;text-decoration: none;margin-left: -10px"  href="{{ path('admin.destination.edit',{id: dest.id}) }}"><i class="far fa-edit"></i> Modifier</a>
+                            </button>
+
+                            <form method="post" action="{{ path('admin.destination.delete',{id:dest.id}) }}" style="display:inline-block" onsubmit="return confirm('Etes vous sùr de supprimer')">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dest.id) }}">
+                                <button  class="btn btn-danger"><i class="far fa-trash-alt"></i> Supprimer</button>
+                            </form>
+
+                        </p>
+                    </div>
+                </div>
+                {%  endfor %}
+            </div>
+        </div>
+
     </main>
 
     <br><hr><br>

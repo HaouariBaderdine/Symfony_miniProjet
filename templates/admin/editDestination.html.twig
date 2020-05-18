@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<style>
+    main{margin-top: 58px;}
+    h2{color:cadetblue;text-align: center;font-weight: bold}
+</style>
+
+    <main role="main">
+        <div class="container mt-4">
+            <h2>edit</h2>
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.code_dest) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.des_dest) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.image) }}</div>
+            </div>
+            <button class="btn btn-primary">Enregistrer</button>
+            {{ form_end(form) }}
+
+        </div>
+    </main>
+
+{% endblock %}

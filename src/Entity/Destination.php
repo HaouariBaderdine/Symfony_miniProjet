@@ -33,6 +33,11 @@ class Destination
      */
     private $villes;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->villes = new ArrayCollection();
@@ -67,6 +72,18 @@ class Destination
         return $this;
     }
 
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Ville[]
      */
@@ -97,4 +114,6 @@ class Destination
 
         return $this;
     }
+
+
 }
