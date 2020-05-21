@@ -159,7 +159,7 @@ class DestinationController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $this->em->persist($ville);
             $this->em->flush();
-            return $this->redirectToRoute('destination.show');
+            return $this->redirectToRoute('destination');
         }
 
         return $this->render('admin/newVille.html.twig',[

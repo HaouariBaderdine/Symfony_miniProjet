@@ -127,9 +127,17 @@
                             <td>{{ ville.codeVille}}</td>
                             <td>{{ ville.desVille }}</td>
                             <td>
-                                <p>
-                                    <a href="{{ path('admin.ville.edit',{id: ville.id}) }}" style="color: yellow;margin-left: 10px" ><i class="far fa-edit"></i></a>
-                                    <a style="color: red;margin-left: 10px"href="#"><i class="far fa-trash-alt"></i></a>
+                                <p style="display:inline-block">
+
+                                    <button class="btn btn-warning">
+                                        <a href="{{ path('admin.ville.edit',{id: ville.id}) }}" style="color: white;" ><i class="far fa-edit"></i></a>
+                                    </button>&nbsp&nbsp&nbsp
+                                <form method="post" action="{{ path('admin.ville.delete',{id: ville.id}) }}" style="display:inline-block"  onsubmit="return confirm('Etes vous sùr de supprimer')">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ville.id) }}">
+                                    <button  class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                </form>
+
                                 </p>
                             </td>
                         </tr>

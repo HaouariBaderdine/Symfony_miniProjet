@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcea835c-4419-425d-8382-187f36834bc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/CircuitController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/editCircuit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/editEtapee.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/editVille.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/newCircuit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/newEtape.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/newVille.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DestinationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Circuit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Circuit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Etape.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Etape.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/VilleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VilleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/Circuits.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/Circuits.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/destination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/destination.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/showCircuit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/showCircuit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/showDestination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/showDestination.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +217,7 @@
       <workItem from="1589811134065" duration="11211000" />
       <workItem from="1589897974826" duration="37000" />
       <workItem from="1589980776331" duration="6431000" />
-      <workItem from="1590012373661" duration="11745000" />
+      <workItem from="1590012373661" duration="14593000" />
     </task>
     <servers />
   </component>
