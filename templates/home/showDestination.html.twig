@@ -46,7 +46,6 @@
         <hr>
     </main>
 
-
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -103,10 +102,6 @@
                                             </div>
                                         </div>
                                         <hr />
-                                        <div id="button">
-                                            <button type="button" class="btn btn-warning"><i class="far fa-edit"></i> Modifier</button>
-                                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Supprimer</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -133,9 +128,8 @@
                             <td>{{ ville.desVille }}</td>
                             <td>
                                 <p>
-                                    <a style="color: #5eb5e0"href="#"><i class="fas fa-info-circle"></i></a>
-                                    <a style="color: yellow" href="#"><i class="far fa-edit"></i></a>
-                                    <a style="color: red"href="#"><i class="far fa-trash-alt"></i></a>
+                                    <a href="{{ path('admin.ville.edit',{id: ville.id}) }}" style="color: yellow;margin-left: 10px" ><i class="far fa-edit"></i></a>
+                                    <a style="color: red;margin-left: 10px"href="#"><i class="far fa-trash-alt"></i></a>
                                 </p>
                             </td>
                         </tr>
@@ -145,7 +139,7 @@
                         </tbody>
                     </table>
                     
-                    <a href="#"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Ville</a>
+                    <a href="{{ path('admin.ville.new') }}"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Ville</a>
                <br>
                 </div>
             </div>

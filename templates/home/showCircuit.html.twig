@@ -3,12 +3,223 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<br><br><br><br>
-    {{ circuit.id }}
+    <style>
+
+        main{margin-top: 68px;}
+        h2{color:cadetblue;text-align: center;font-weight: bold}
+
+        .container{
+            margin-top: 30px;
+        }
+        .image-container {
+            position: relative;
+        }
+
+        .container .image-container{
+            margin-left: 27%;
+            width: 500px;
+        }
+
+        .container table tr th{
+            text-decoration: underline;
+            color: dodgerblue;
+        }
+
+        .container table img{
+            border:solid 1px white;
+            height: 60px;
+            width: 90px;
+        }
+
+        #connect{margin-left:-123px;width: 1350px;}
+        .social a{font-size: 4.5em;padding: 2rem;}
+        .fa-facebook{color: #3b5998;}
+        .fa-twitter{color: #00aced;}
+        .fa-google-plus-g{color: #dd4b39;}
+        .fa-instagram{color: #517fa4;}
+        .fa-youtube{color: #bb0000;}
+        .fa-facebook:hover,.fa-twitter:hover,.fa-google-plus-g:hover
+        ,.fa-instagram:hover,.fa-youtube:hover{color: #d5d5d5;}
+        footer{margin-left:-123px;width: 1350px;background-color: #3f3f3f;color: #d5d5d5;padding-top: 2rem;}
+        hr.light{border-top: 1px solid #d5d5d5;width: 75%;margin-top: .8rem;margin-bottom: 1rem;}
+        footer a{color: #d5d5d5;}
+        hr.light-100{border-top: 1px solid #d5d5d5;width: 75%;margin-top: .8rem;margin-bottom: 1rem;}
+
+
+    </style>
+
+    <main>
+        <hr>
+        <h2>{{ circuit.desCircuit }}</h2>
+        <hr>
+    </main>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content ml-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Identification de circuit :</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ circuit.id }}
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Code de circuit :</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ circuit.codeCircuit }}
+                                            </div>
+                                        </div>
+                                        <hr />
+
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Description de circuit:</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ circuit.desCircuit }}
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Durée de circuit :</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                {{ circuit.dureeCircuit }}
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Ville étape</th>
+                            <th scope="col">Circuit étape</th>
+                            <th scope="col">Duree étape</th>
+                            <th scope="col">Ordre étape</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for etape in circuit.etapes %}
+                            <tr>
+                                <th scope="row">{{ etape.id}}</th>
+                                <td>{{ etape.villeEtape }}</td>
+                                <td>{{ circuit.desCircuit }}</td>
+                                <td>{{ etape.dureeEtape }}</td>
+                                <td>{{ etape.ordreEtape }}</td>
+                                <td>
+                                    <p style="display:inline-block">
+
+                                        <button class="btn btn-warning">
+                                            <a href="{{ path('admin.etape.edit',{id: etape.id}) }}" style="color: white;" ><i class="far fa-edit"></i></a>
+                                        </button>&nbsp&nbsp&nbsp
+                                        <form method="post" action="{{ path('admin.etape.delete',{id: etape.id}) }}" style="display:inline-block"  onsubmit="return confirm('Etes vous sùr de supprimer')">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ etape.id) }}">
+                                            <button  class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                        </form>
+
+                                    </p>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+
+                    <a href="{{ path('admin.etape.new') }}"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Etape</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><hr><br>
+
+    <!-- Connect-->
+
+    <div id="connect" class="container-fluid padding bg-light">
+        <div class="row text-center" padding>
+            <div class="col-12">
+                <h2>Connection</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer-->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h1 style="font-family: Vivaldi;">Haouari voyage</h1>
+                    <hr class="light">
+                    <p>(+216) 27 132 456</p>
+                    <p>(+216) 70 123 456</p>
+                    <p> Email : bader@gmail.com</p>
+                    <p>Ariana : Charguia</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Menu</h5>
+                    <hr class="light">
+                    <p>Accueil</p>
+                    <p>Destination</p>
+                    <p>Circuit</p>
+                    <p>Contact</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Equipe</h5>
+                    <hr class="light">
+                    <p>Bader</p>
+                    <p>aaaa</p>
+                    <p>bbbb</p>
+                    <p>aaaaa</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light">
+                    <h5>&copy;Haouari Baderdine 2020</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 {% endblock %}

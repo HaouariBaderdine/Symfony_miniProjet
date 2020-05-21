@@ -4,16 +4,18 @@ namespace App\Controller;
 
 
 use App\Entity\Destination;
+use App\Entity\Ville;
 use App\Form\DestinationType;
-use App\Repository\CircuitRepository;
+use App\Form\VilleType;
 use App\Repository\DestinationRepository;
-use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class DestinationController extends AbstractController
 {
@@ -24,27 +26,26 @@ class DestinationController extends AbstractController
     private $repository;
 
     /*
-     * @var CircuitRepository
-     */
-    private $repositoryCir;
-
-    /*
      * @var EntityManagerInterface
      */
     private $em;
 
-    public function __Construct(DestinationRepository $repository,CircuitRepository $repository2,EntityManagerInterface $em)
+    public function __Construct(DestinationRepository $repository,EntityManagerInterface $em)
     {
         //destination
         $this->repository = $repository;
-        //circuit
-        $this->repositoryCir = $repository2;
         //Entity manager
         $this->em = $em;
     }
 
+    /*-----------------------------------------Destination-------------------------------------------------*/
+    /*---------------------------------------------------------------------------------------------------*/
+    /*---------------------------------------------------------------------------------------------------*/
+
+
     /**
      * @Route("/destination", name="destination")
+     * @param DestinationRepository $repository
      * @return Response
      */
     public function destination(DestinationRepository $repository)
@@ -59,6 +60,7 @@ class DestinationController extends AbstractController
 
     /**
      * @Route("/detail_destination/{id}", name="destination.show")
+     * @param $id
      * @return Response
      */
 
@@ -73,7 +75,7 @@ class DestinationController extends AbstractController
 
     /**
      * @Route("/admin/destination/create", name="admin.destination.new")
-     * @param Destination $destination
+     * @param Request $request
      * @return Response
      */
 
@@ -100,6 +102,7 @@ class DestinationController extends AbstractController
     /**
      * @Route("/admin/destinationDelete/{id}", name="admin.destination.delete")
      * @param Destination $destination
+     * @param Request $request
      * @return RedirectResponse;
      */
 
@@ -113,11 +116,10 @@ class DestinationController extends AbstractController
     }
 
 
-
-
     /**
      * @Route("/admin/destination/{id}", name="admin.destination.edit")
      * @param Destination $destination
+     * @param Request $request
      * @return Response
      */
 
@@ -137,39 +139,77 @@ class DestinationController extends AbstractController
         ]);
     }
 
-
-
-
-
+    /*----------------------------------------Ville-------------------------------------------------------*/
+    /*---------------------------------------------------------------------------------------------------*/
+    /*---------------------------------------------------------------------------------------------------*/
 
     /**
-     * @Route("/circuit", name="circuit")
+     * @Route("/admin/ville/create", name="admin.ville.new")
+     * @param Request $request
      * @return Response
      */
-    public function Circuit(CircuitRepository $repository)
-    {
-        $circuits = $repository->findAll();
-        dump($circuits);
 
-        return $this->render('home/Circuits.html.twig', [
-            'controller_name' => 'DestinationController',
-            'circuits' => $circuits
+    public function newVille(Request $request):Response
+    {
+        $ville = new Ville();
+
+        $form = $this->createForm(VilleType::class,$ville);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $this->em->persist($ville);
+            $this->em->flush();
+            return $this->redirectToRoute('destination.show');
+        }
+
+        return $this->render('admin/newVille.html.twig',[
+            'ville' => $ville,
+            'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/detail_circuit/{id}", name="circuit.show")
+     * @Route("/admin/villeDelete/{id}", name="admin.ville.delete")
+     * @param Ville $ville
+     * @param Request $request
+     * @return RedirectResponse;
+     */
+
+    public function deleteVille(Ville $ville,Request $request):Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$ville->getId(),$request->get('_token'))){
+            $this->em->remove($ville);
+            $this->em->flush();
+        }
+        return $this->redirectToRoute('destination.show');
+    }
+
+
+    /**
+     * @Route("/admin/ville/{id}", name="admin.ville.edit")
+     * @param Ville $ville
+     * @param Request $request
      * @return Response
      */
 
-    public function showCircuit($id):Response
+    public function editVille(Ville $ville,Request $request):Response
     {
-        $circuit = $this->repository->find($id);
 
-        return $this->render('home/showCircuit.html.twig',[
-            'circuit' => $circuit
+
+        $form = $this->createForm(VilleType::class,$ville);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $this->em->flush();
+            return $this->redirectToRoute('destination');
+        }
+
+        return $this->render('admin/editVille.html.twig',[
+            'ville' => $ville,
+            'form' => $form->createView()
         ]);
     }
+
 
 
 

@@ -49,6 +49,10 @@ class Ville
         $this->etapes = new ArrayCollection();
     }
 
+    public function __toString() {
+        return (string) $this->getDesVille();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +94,18 @@ class Ville
         return $this;
     }
 
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Etape[]
      */
@@ -121,15 +137,6 @@ class Ville
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
 
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
 
-        return $this;
-    }
 }

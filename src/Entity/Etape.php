@@ -38,6 +38,10 @@ class Etape
      */
     private $ordre_etape;
 
+    public function __toString() {
+        return "some string representation of your object";
+    }
+
     public function getId(): ?int
     {
         return $this->id;

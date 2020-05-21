@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Destination;
 use App\Entity\Ville;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +17,10 @@ class VilleType extends AbstractType
             ->add('code_ville')
             ->add('des_ville')
             ->add('image')
-            ->add('dest_ville')
+            ->add('dest_ville'/*,EntityType::class,[
+                'class' => Destination::class,
+                'choice_label' => 'titre'
+            ]*/)
         ;
     }
 
