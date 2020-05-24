@@ -9,6 +9,7 @@ use App\Form\DestinationType;
 use App\Form\VilleType;
 use App\Repository\DestinationRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,12 +46,18 @@ class DestinationController extends AbstractController
 
     /**
      * @Route("/destination", name="destination")
+     * @param PaginatorInterface $paginator
+     * @param Request $request
      * @param DestinationRepository $repository
      * @return Response
      */
-    public function destination(DestinationRepository $repository)
+    public function destination(PaginatorInterface $paginator,Request $request,DestinationRepository $repository):Response
     {
-        $destinations = $repository->findAll();
+        $destinations = $paginator->paginate(
+            $repository->findAll(),
+            $request->query->getInt('page',1),
+            6
+        );
         return $this->render('home/destination.html.twig', [
             'controller_name' => 'DestinationController',
             'destinations' => $destinations
@@ -89,7 +96,7 @@ class DestinationController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $this->em->persist($destination);
             $this->em->flush();
-            return $this->redirectToRoute('destination');
+            return $this->redirectToRoute('admin.destination.new');
         }
 
         return $this->render('admin/newDestination.html.twig',[

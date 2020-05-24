@@ -10,6 +10,7 @@ use App\Form\EtapeType;
 use App\Repository\CircuitRepository;
 use App\Repository\EtapeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,13 +46,18 @@ class CircuitController extends AbstractController{
 
     /**
      * @Route("/circuit", name="circuit")
+     * @param PaginatorInterface $paginator
+     * @param Request $request
      * @param CircuitRepository $repository
      * @return Response
      */
-    public function Circuit(CircuitRepository $repository)
+    public function Circuit(PaginatorInterface $paginator,Request $request,CircuitRepository $repository)
     {
-        $circuits = $repository->findAll();
-        dump($circuits);
+        $circuits = $paginator->paginate(
+            $repository->findAll(),
+            $request->query->getInt('page',1),
+            6
+        );
 
         return $this->render('home/Circuits.html.twig', [
             'controller_name' => 'CircuitController',
@@ -91,7 +97,7 @@ class CircuitController extends AbstractController{
         if($form->isSubmitted() && $form->isValid()){
             $this->em->persist($circuit);
             $this->em->flush();
-            return $this->redirectToRoute('circuit');
+            return $this->redirectToRoute('admin.circuit.new');
         }
 
         return $this->render('admin/newCircuit.html.twig',[
