@@ -208,7 +208,7 @@ class CircuitController extends AbstractController{
             $this->em->remove($etape);
             $this->em->flush();
         }
-        return $this->redirectToRoute('circuit.show');
+        return $this->redirectToRoute('circuit');
     }
 
 
