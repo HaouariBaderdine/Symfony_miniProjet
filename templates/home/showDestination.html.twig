@@ -6,7 +6,7 @@
 
     <style>
 
-        main{margin-top: 68px;}
+        main{margin-top: 30px;}
         h2{color:cadetblue;text-align: center;font-weight: bold}
 
         .container{
@@ -16,9 +16,9 @@
             position: relative;
         }
 
-        .container .image-container{
-            margin-left: 27%;
-            width: 500px;
+        .container img{
+            width: 1050px;
+            height: 500px;
         }
 
         .container #button{
@@ -49,12 +49,10 @@
         hr.light{border-top: 1px solid #d5d5d5;width: 75%;margin-top: .8rem;margin-bottom: 1rem;}
         footer a{color: #d5d5d5;}
         hr.light-100{border-top: 1px solid #d5d5d5;width: 75%;margin-top: .8rem;margin-bottom: 1rem;}
-
     </style>
-
     <main>
         <hr>
-             <h2>{{ destination.desDest }}</h2>
+        <h2>{{ destination.desDest }}</h2>
         <hr>
     </main>
 
@@ -66,7 +64,7 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="{{ destination.image }}" id="imgProfile"  class="img-thumbnail" />
+                                    <img src="{{ destination.image }}" id="imgProfile"  class="img-thumbnail"  alt=""/>
                                 </div>
                                 <div class="ml-auto">
                                     <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -84,6 +82,7 @@
                                 <div class="tab-content ml-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
 
+                                        {% if app.user %}
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;"> Identification :</label>
@@ -93,7 +92,7 @@
                                             </div>
                                         </div>
                                         <hr />
-
+                                        {% endif %}
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
@@ -119,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-<br>
+                    <br>
                     <table class="table table-striped table-dark">
                         <thead>
                         <tr>
@@ -127,40 +126,43 @@
                             <th scope="col">Image ville</th>
                             <th scope="col">Code ville</th>
                             <th scope="col">Description ville</th>
-                            <th scope="col">Actions</th>
+                            {% if app.user %}
+                                <th scope="col">Actions</th>
+                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
 
                         {% for ville in destination.villes %}
-                        <tr>
-                            <th scope="row">{{ ville.id }}</th>
-                            <td><a href="{{ ville.image }}"><img src="{{ ville.image }}"></a></td>
-                            <td>{{ ville.codeVille}}</td>
-                            <td>{{ ville.desVille }}</td>
-                            <td>
-                                <p style="display:inline-block">
-
-                                    <button class="btn btn-warning">
-                                        <a href="{{ path('admin.ville.edit',{id: ville.id}) }}" style="color: white;" ><i class="far fa-edit"></i></a>
-                                    </button>&nbsp&nbsp&nbsp
-                                <form method="post" action="{{ path('admin.ville.delete',{id: ville.id}) }}" style="display:inline-block"  onsubmit="return confirm('Etes vous sùr de supprimer')">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ville.id) }}">
-                                    <button  class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                                </form>
-
-                                </p>
-                            </td>
-                        </tr>
+                            <tr>
+                                <th scope="row">{{ ville.id }}</th>
+                                <td><a href="{{ ville.image }}"><img src="{{ ville.image }}"></a></td>
+                                <td>{{ ville.codeVille}}</td>
+                                <td>{{ ville.desVille }}</td>
+                                {% if  app.user %}
+                                    <td>
+                                        <p style="display:inline-block">
+                                            <button class="btn btn-warning">
+                                                <a href="{{ path('admin.ville.edit',{id: ville.id}) }}" style="color: white;" ><i class="far fa-edit"></i></a>
+                                            </button>&nbsp&nbsp&nbsp
+                                        <form method="post" action="{{ path('admin.ville.delete',{id: ville.id}) }}" style="display:inline-block"  onsubmit="return confirm('Etes vous sùr de supprimer')">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ville.id) }}">
+                                            <button  class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                        </form>
+                                        </p>
+                                    </td>
+                                {% endif %}
+                            </tr>
 
                         {% endfor %}
 
                         </tbody>
                     </table>
-                    
-                    <a href="{{ path('admin.ville.new') }}"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Ville</a>
-               <br>
+                    {% if  app.user %}
+                        <a href="{{ path('admin.ville.new') }}"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Ville</a>
+                        <br>
+                    {% endif %}
                 </div>
             </div>
         </div>

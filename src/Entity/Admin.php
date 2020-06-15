@@ -3,18 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(
- * fields = {"username"},
- * message ="L'username que vous avez indiqué est dejà utilisé !"
- * )
+ * @ORM\Entity(repositoryClass="App\Repository\AdminRepository")
  */
-class User implements UserInterface
+class Admin
 {
     /**
      * @ORM\Id()
@@ -25,7 +18,6 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     *
      */
     private $email;
 
@@ -36,15 +28,8 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min="8",minMessage="Votre mot de passe doit faire au minimum 8 caractéres")
      */
-
     private $password;
-
-    /**
-     * @Assert\EqualTo(propertyPath="password",message="Vous n'avez pas tappez la meme mot de passe")
-     */
-    public $confirm_password;
 
     public function getId(): ?int
     {
@@ -86,12 +71,4 @@ class User implements UserInterface
 
         return $this;
     }
-
-
-    public function eraseCredentials() {}
-    public function getSalt() {}
-    public function getRoles() {
-        return ['ROLE_ADMIN'];
-    }
-
 }

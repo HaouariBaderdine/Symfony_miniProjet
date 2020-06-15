@@ -6,7 +6,7 @@
 
     <style>
 
-        main{margin-top: 68px;}
+        main{margin-top: 30px;}
         h2{color:cadetblue;text-align: center;font-weight: bold}
 
         .container{
@@ -71,6 +71,7 @@
                                 <div class="tab-content ml-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
 
+                                        {% if app.user %}
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;"> Identification de circuit :</label>
@@ -80,6 +81,7 @@
                                             </div>
                                         </div>
                                         <hr />
+                                        {% endif %}
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
@@ -126,7 +128,9 @@
                             <th scope="col">Circuit étape</th>
                             <th scope="col">Duree étape</th>
                             <th scope="col">Ordre étape</th>
-                            <th scope="col">Actions</th>
+                            {% if app.user %}
+                                <th scope="col">Actions</th>
+                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
@@ -138,29 +142,32 @@
                                 <td>{{ circuit.desCircuit }}</td>
                                 <td>{{ etape.dureeEtape }}</td>
                                 <td>{{ etape.ordreEtape }}</td>
-                                <td>
-                                    <p style="display:inline-block">
+                                {% if app.user %}
+                                    <td>
+                                        <p style="display:inline-block">
 
-                                        <button class="btn btn-warning">
-                                            <a href="{{ path('admin.etape.edit',{id: etape.id}) }}" style="color: white;" ><i class="far fa-edit"></i></a>
-                                        </button>&nbsp&nbsp&nbsp
+                                            <button class="btn btn-warning">
+                                                <a href="{{ path('admin.etape.edit',{id: etape.id}) }}" style="color: white;" ><i class="far fa-edit"></i></a>
+                                            </button>&nbsp&nbsp&nbsp
                                         <form method="post" action="{{ path('admin.etape.delete',{id: etape.id}) }}" style="display:inline-block"  onsubmit="return confirm('Etes vous sùr de supprimer')">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ etape.id) }}">
                                             <button  class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                                         </form>
 
-                                    </p>
-                                </td>
+                                        </p>
+                                    </td>
+                                {% endif %}
                             </tr>
 
                         {% endfor %}
 
                         </tbody>
                     </table>
-
-                    <a href="{{ path('admin.etape.new') }}"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Etape</a>
-                    <br>
+                    {% if app.user %}
+                        <a href="{{ path('admin.etape.new') }}"><img style="width: 100px;width: 100px;margin-left: 40%" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/add-icon.png"> Ajouter Etape</a>
+                        <br>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -2,17 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcea835c-4419-425d-8382-187f36834bc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/coposant/carousel.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/coposant/footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/coposant/icon_connect.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SecuritAdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200610195317.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/AdminRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/securit_admin/admin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/securit_admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CircuitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CircuitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coposant/carousel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coposant/carousel.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/Circuits.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/Circuits.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/contact.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/destination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/destination.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/showCircuit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/showCircuit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/showDestination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/showDestination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/registration.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +183,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -232,6 +243,8 @@
       <workItem from="1590188497195" duration="632000" />
       <workItem from="1590345358875" duration="27000" />
       <workItem from="1590345427587" duration="6559000" />
+      <workItem from="1592230744721" duration="144000" />
+      <workItem from="1592231219418" duration="2843000" />
     </task>
     <servers />
   </component>
@@ -258,10 +271,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="785" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1588255873846" />
-    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589675670706">
+    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1592230839781">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1589675670706" />
+    <state x="660" y="105" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1592230839781" />
     <state x="739" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590352598953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
