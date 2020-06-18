@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+
+    <style>
+        main{margin-top: 58px;}
+        h2{color:cadetblue;text-align: center;font-weight: bold}
+    </style>
+
+    <main role="main">
+        <div class="container mt-4">
+            <h2>Ajouter Hotel</h2>
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.name) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.ville) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.etoile) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.prix) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.description) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.image) }}</div>
+            </div>
+            <button class="btn btn-primary">Ajouter</button>
+            {{ form_end(form) }}
+
+        </div>
+    </main>
+
+{% endblock %}
+

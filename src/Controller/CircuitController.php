@@ -4,12 +4,17 @@ namespace App\Controller;
 
 
 use App\Entity\Circuit;
+use App\Entity\Comment;
 use App\Entity\Etape;
+use App\Entity\Reservation;
 use App\Form\CircuitType;
+use App\Form\CommentType;
 use App\Form\EtapeType;
+use App\Form\ReservationType;
 use App\Repository\CircuitRepository;
 use App\Repository\EtapeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ObjectManager;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -68,16 +73,48 @@ class CircuitController extends AbstractController{
     /**
      * @Route("/detail_circuit/{id}", name="circuit.show")
      * @param $id
+     * @param Request $request
+     * @param Request $request1
+     * @param EntityManagerInterface $manager
      * @return Response
      */
 
-    public function showCircuit($id):Response
+    public function showCircuit($id,Request $request,Request $request1,EntityManagerInterface $manager):Response
     {
         $circuit = $this->repositoryCir->find($id);
 
+        /* commantaires */
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class,$comment);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $comment->setCreatedAt(new \DateTime())
+                ->setCircuit($circuit);
+            $manager->persist($comment);
+            $manager->flush();
+
+            return $this->redirectToRoute('circuit.show',['id'=>$id]);
+        }
+
+        /* reservation */
+        $reservation = new Reservation();
+        $form_r = $this->createForm(ReservationType::class,$reservation);
+        $form_r->handleRequest($request1);
+        if ($form_r->isSubmitted() && $form_r->isValid()){
+            $reservation->setDate(new \DateTime())
+                ->setCircuit($circuit);
+            $manager->persist($reservation);
+            $manager->flush();
+
+            return $this->redirectToRoute('circuit');
+        }
+
+        /**/
         return $this->render('home/showCircuit.html.twig',[
             'controller_name' => 'CircuitController',
-            'circuit' => $circuit
+            'circuit' => $circuit,
+            'commentForm'=>$form->createView(),
+            'reservationComment'=>$form_r->createView()
         ]);
     }
 

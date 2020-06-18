@@ -18,7 +18,11 @@ class HomeController extends AbstractController
     public function _construct(Environment $twig){
         $this->twig = $twig;
     }
-    public function home():Response
+
+    /**
+     * @Route("/", name="home")
+     */
+    public function home()
     {
         return new Response($this->render('home/home.html.twig', [
         'controller_name' => 'HomeController',

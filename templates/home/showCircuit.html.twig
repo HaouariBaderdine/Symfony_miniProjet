@@ -114,6 +114,32 @@
                                         </div>
                                         <hr />
 
+                                        {% if not app.user %}
+                                            <div>
+                                                <br>
+                                                <section id="reserver">
+                                                    {{ form_start(reservationComment) }}
+
+                                                    {{ form_row(reservationComment.cin, {'attr':
+                                                        {'placeholder' : " Votre numéro de cin"}
+                                                    }) }}
+
+                                                    {{ form_row(reservationComment.nom, {'attr':
+                                                        {'placeholder' : " Votre nom"}
+                                                    }) }}
+
+                                                    {{ form_row(reservationComment.prenom, {'attr':
+                                                        {'placeholder' : " Votre prenom "}
+                                                    }) }}
+                                                    <button type="submit" class="btn btn-success">
+                                                        Reserver
+                                                    </button>
+                                                    {{ form_end(reservationComment) }}
+                                                </section>
+                                            </div>
+                                        {% endif %}
+
+
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +197,110 @@
                 </div>
             </div>
         </div>
+
+        <br>
+        {% if app.user %}
+            <div>
+                <section id="reservations" >
+                    <h2 style="text-align: left">{{ circuit.reservations|length }} Reservations : </h2>
+                    <br>
+                    {% for r in circuit.reservations %}
+                        <div class="comment">
+                            <div class="row">
+                                <div class="col-3">
+                                    {{ r.id }}
+                                </div>
+                                <div class="col-3">
+                                    {{ r.cin}}
+                                </div>
+                                <div class="col-3">
+                                    {{ r.nom}}
+                                </div>
+                                <div class="col-3">
+                                    {{ r.prenom}}
+                                </div>
+
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </section>
+            </div>
+        {% endif %}
+        <br>
+        {%  if app.user %}
+            <section id="commantaires" style="border: 1px solid cadetblue">
+                <h2 style="text-align: left;margin-left: 5px">{{ circuit.comments |length }} Commentaires : </h2>
+                <br>
+                <div style="margin-left: 5px" class="comment">
+                    <div class="row">
+                        <div class="col-5" style="color: gray">
+                            Author (date de ommantaire)
+                        </div>
+                        <div class="col" style="color: gray">
+                            Content
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                {% for comment in circuit.comments %}
+                    <div style="margin-left: 5px" class="comment">
+                        <div class="row">
+                            <div class="col-5">
+                                {{ comment.author}} (<small>{{ comment.createdAt |date
+                                        ('d/m/Y à H:i')}}</small>)
+                            </div>
+                            <div class="col">
+                              {{ comment.content | raw}}
+                            </div>
+                        </div>
+                    </div><hr>
+                {% endfor %}
+                <br>
+            </section>
+        {% endif %}
+
+
+
+        {% if not app.user %}
+        <br>
+        <section id="commantaires">
+            <h2 style="text-align: left">{{ circuit.comments |length }} Commentaires : </h2>
+            <br>
+            {% for comment in circuit.comments %}
+                <div class="comment">
+                    <div class="row">
+                        <div class="col-3">
+                            {{ comment.author}} (<small>{{ comment.createdAt |date
+                                    ('d/m/Y à H:i')}}</small>)
+                        </div>
+                        <div class="col">
+                            {{ comment.content | raw}}
+                        </div>
+                    </div>
+                </div><hr>
+            {% endfor %}
+            <br>
+            {{ form_start(commentForm) }}
+
+            {{ form_row(commentForm.author, {'attr':
+                {'placeholder' : " Votre nom & prénom "}
+            }) }}
+
+            {{ form_row(commentForm.content, {'attr':
+                {'placeholder' : " Votre Commentaire "}
+            }) }}
+
+            <button type="submit" class="btn btn-primary">
+                Commenter
+            </button>
+
+            {{ form_end(commentForm) }}
+
+        </section>
+        {% endif %}
     </div>
+
     <br><hr><br>
 
     <!-- Connect-->

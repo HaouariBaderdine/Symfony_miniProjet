@@ -24,10 +24,13 @@
                 <a  class="nav-link" href="{{ path('destination') }}">Destination</a>
             </li>
             <li class="nav-item ">
+                <a  class="nav-link" href="{{ path('hotel') }}">Hotel</a>
+            </li>
+            <li class="nav-item ">
                 <a  class="nav-link" href="{{ path('circuit') }}">Circuit</a>
             </li>
             <li class="nav-item">
-                <a  class="nav-link" href="{{ path('contact') }}">Contacter</a>
+                <a  class="nav-link" href="{{ path('contact') }}">Contact</a>
             </li>
             {% if not app.user %}
                 <li class="nav-item">
@@ -35,7 +38,7 @@
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a  class="nav-link" href="{{path('security_logout')}}">Deconexion</a>
+                    <a  class="nav-link" href="{{path('security_logout')}}">Déconnexion</a>
                 </li>
             {% endif %}
         </ul>

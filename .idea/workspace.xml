@@ -2,25 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcea835c-4419-425d-8382-187f36834bc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecuritAdminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200610195317.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/AdminRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/securit_admin/admin.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/securit_admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/HotelController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Hotel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/PropretySearch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Reservation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/HotelType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/PropretySearchType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ReservationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200615154101.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CommentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/HotelRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ImageRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ReservationRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/newHotel.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/hotel.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/hotelSearch.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/showHotel.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CircuitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CircuitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DestinationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DestinationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecuritAdminController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Circuit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Circuit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200420175120.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200616135302.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200504131406.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200504152309.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200615153350.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200504155633.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200616131956.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200514230011.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200616134933.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200514230134.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200610195317.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AdminRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/coposant/carousel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coposant/carousel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/Circuits.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/Circuits.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/destination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/destination.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/showCircuit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/showCircuit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/showDestination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/showDestination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/securit_admin/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/editHotel.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/securit_admin/index.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/registration.html.twig" afterDir="false" />
     </list>
@@ -176,7 +199,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/coposant" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -187,6 +210,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mosaik7\Desktop\dsi22\Symfony\demo\src\Controller" />
       <recent name="C:\Users\Mosaik7\Desktop\dsi22\Symfony\demo\templates\coposant" />
       <recent name="C:\Users\Mosaik7\Desktop\dsi22\Symfony\demo\templates\home" />
     </key>
@@ -244,7 +268,7 @@
       <workItem from="1590345358875" duration="27000" />
       <workItem from="1590345427587" duration="6559000" />
       <workItem from="1592230744721" duration="144000" />
-      <workItem from="1592231219418" duration="2843000" />
+      <workItem from="1592231219418" duration="21812000" />
     </task>
     <servers />
   </component>
@@ -283,10 +307,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="605" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589815201257" />
-    <state x="759" y="119" key="FileChooserDialogImpl" timestamp="1589815204756">
+    <state x="759" y="119" key="FileChooserDialogImpl" timestamp="1592234933721">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="759" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589815204756" />
+    <state x="759" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592234933721" />
+    <state x="732" y="87" key="NewPhpClassDialog" timestamp="1592488061661">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="732" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1592488061661" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1588293251729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -295,9 +323,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588254921994" />
-    <state x="346" y="49" key="search.everywhere.popup" timestamp="1587226711077">
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1592312341248">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587226711077" />
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592312341248" />
   </component>
 </project>

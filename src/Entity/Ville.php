@@ -44,9 +44,15 @@ class Ville
      */
     private $image;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Hotel", mappedBy="ville")
+     */
+    private $hotels;
+
     public function __construct()
     {
         $this->etapes = new ArrayCollection();
+        $this->hotels = new ArrayCollection();
     }
 
     public function __toString() {
@@ -131,6 +137,37 @@ class Ville
             // set the owning side to null (unless already changed)
             if ($etape->getVilleEtape() === $this) {
                 $etape->setVilleEtape(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Hotel[]
+     */
+    public function getHotels(): Collection
+    {
+        return $this->hotels;
+    }
+
+    public function addHotel(Hotel $hotel): self
+    {
+        if (!$this->hotels->contains($hotel)) {
+            $this->hotels[] = $hotel;
+            $hotel->setVille($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHotel(Hotel $hotel): self
+    {
+        if ($this->hotels->contains($hotel)) {
+            $this->hotels->removeElement($hotel);
+            // set the owning side to null (unless already changed)
+            if ($hotel->getVille() === $this) {
+                $hotel->setVille(null);
             }
         }
 
